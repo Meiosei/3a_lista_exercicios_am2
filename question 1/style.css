@@ -4,10 +4,13 @@
   --gradient: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   --shadow-1: 0 4px 30px #0000001a;
   --white: #ffffff;
+  --white-opacity-50: #ffffff80;
   --gray-1: #eeeeee;
   --gray-2: #cccccc;
   --gray-2-opacity-50: #cccccc80;
   --gray-3: #ffffff4d;
+  --gray-6: #51515180;
+  --gray-8: #474747;
   --spacing-0: none;
   --spacing-1: 8px;
   --spacing-2: calc(var(--spacing-1) * 2);
@@ -37,6 +40,45 @@ body {
   background: var(--gradient);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
+}
+
+input {
+	padding: var(--spacing-2);
+	border: 1px solid var(--white);
+	border-radius: var(--spacing-2);
+	color: var(--white);
+	font-size: var(--spacing-3);
+	background: var(--gray-2-opacity-50);
+	backdrop-filter: blur(5px);
+}
+
+input::placeholder {
+	color: var(--gray-6);
+	opacity: 0.75;
+}
+
+input:focus {
+	outline: 5px solid var(--gray-1);
+}
+
+button {
+  display: inline-block;
+	padding: var(--spacing-2);
+	border: 1px solid var(--white);
+	border-radius: var(--spacing-2);
+	color: var(--gray-8);
+	font-size: var(--spacing-3);
+	background: var(--white-opacity-50);
+	backdrop-filter: blur(15px);
+	cursor: pointer;
+	transition: 0.25s ease-out;
+	box-shadow: var(--shadow-1);
+}
+
+button:hover {
+	color: var(--white);
+	background: var(--gray-6);
+	box-shadow: var(--spacing-0);
 }
 
 #container {
