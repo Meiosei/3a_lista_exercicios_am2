@@ -14,4 +14,4 @@ function sortArrayStr(arr, typeSort = 1) {
   }
 }
 
-console.log(sortArrayStr(["b", "a", "c"], 1));
+console.log(sortArrayStr(['b', 'a', 'c'], 1));

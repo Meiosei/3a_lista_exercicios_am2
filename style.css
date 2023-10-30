@@ -43,52 +43,52 @@ body {
 }
 
 input {
-	padding: var(--spacing-2);
-	border: 1px solid var(--white);
-	border-radius: var(--spacing-2);
-	color: var(--white);
-	font-size: var(--spacing-3);
-	background: var(--gray-2-opacity-50);
-	backdrop-filter: blur(5px);
+  padding: var(--spacing-2);
+  border: 1px solid var(--white);
+  border-radius: var(--spacing-2);
+  color: var(--white);
+  font-size: var(--spacing-3);
+  background: var(--gray-2-opacity-50);
+  backdrop-filter: blur(5px);
 }
 
 input::placeholder {
-	color: var(--gray-6);
-	opacity: 0.75;
+  color: var(--gray-6);
+  opacity: 0.75;
 }
 
 input:focus {
-	outline: 5px solid var(--gray-1);
+  outline: 5px solid var(--gray-1);
 }
 
 button {
   display: inline-block;
-	padding: var(--spacing-2);
-	border: 1px solid var(--white);
-	border-radius: var(--spacing-2);
-	color: var(--gray-8);
-	font-size: var(--spacing-3);
-	background: var(--white-opacity-50);
-	backdrop-filter: blur(15px);
-	cursor: pointer;
-	transition: 0.25s ease-out;
-	box-shadow: var(--shadow-1);
+  padding: var(--spacing-2);
+  border: 1px solid var(--white);
+  border-radius: var(--spacing-2);
+  color: var(--gray-8);
+  font-size: var(--spacing-3);
+  background: var(--white-opacity-50);
+  backdrop-filter: blur(15px);
+  cursor: pointer;
+  transition: 0.25s ease-out;
+  box-shadow: var(--shadow-1);
 }
 
 button:hover {
-	color: var(--white);
-	background: var(--gray-6);
-	box-shadow: var(--spacing-0);
+  color: var(--white);
+  background: var(--gray-6);
+  box-shadow: var(--spacing-0);
 }
 
 a {
-	color: var(--gray-1);
-	transition: 0.25s;
+  color: var(--gray-1);
+  transition: 0.25s;
 }
 
 a:hover {
-	color: var(--gradient);
-	opacity: 0.9;
+  color: var(--gradient);
+  opacity: 0.9;
 }
 
 #container {
@@ -132,7 +132,7 @@ a:hover {
 
 #result {
   width: 100%;
-	margin-top: var(--spacing-3);
+  margin-top: var(--spacing-3);
   padding: var(--spacing-1);
   display: block;
 }

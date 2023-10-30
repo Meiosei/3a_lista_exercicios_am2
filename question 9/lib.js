@@ -88,11 +88,11 @@ function readNumberPerExtense(number) {
       }
 
       default:
-        throw new Error("Error: " + i);
+        throw new Error('Error: ' + i);
     }
   }
 
-  return numberName.join(" e ");
+  return numberName.join(' e ');
 }
 
 console.log(readNumberPerExtense(211));

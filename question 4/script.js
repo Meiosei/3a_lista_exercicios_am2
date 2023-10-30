@@ -7,6 +7,6 @@ async function listImages(url) {
   return json;
 }
 
-listImages("https://jsonplaceholder.typicode.com/photos").then((value) => {
+listImages('https://jsonplaceholder.typicode.com/photos').then(value => {
   console.log(value);
 });

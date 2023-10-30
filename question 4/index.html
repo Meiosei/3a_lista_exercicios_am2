@@ -1,23 +1,49 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<title>Autoração</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <title>Autoração</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="../style.css" rel="stylesheet" />
-	</head>
-	<body>
+  </head>
+  <body>
     <section id="container">
       <h2 id="question">
         <span>4)</span>
-				Explicação: Um programa feito em Javascript e que rode num navegador, normalmente, trabalha com chamadas de funções assíncrona.  Dessa forma, o programa não precisa esperar a execução e retorno de valor de uma função para continuar sua execução. Essa assincronia é muito importante se o programa tem que se comunicar com uma função que está no servidor (backend) e não pode esperar o retorno dessa função para continuar sua execução.
-				<p>
-				Desta forma, é possível continuar interagindo com a página web em seu navegador, enquanto se aguarda a carga de algum conjunto de dados solicitado pelo usuário. Quando os dados chegam, o programa interrompe o que está fazendo e vai executar o trecho de código que solicitou os dados. Você já viu que é possível continuar incluindo itens no Carrinho de Compras  da aplicação de vendas da Amazon, mesmo que a aplicação não tenha confirmado as inserções já realizadas? Quando a inserção é realizada, é apresentada uma mensagem informando a inserção para o utilizador.
-				</p>
-				<p>
-				A função que é utilizada no Javascript para chamada remota de funções assíncronas, atualmente, é a fetch(). Essa função é exemplificada no tutorial publicado no site GeeksforGeeks, presente na URL <a target="_blank" href="https://www.geeksforgeeks.org/javascript-fetch-method/">https://www.geeksforgeeks.org/javascript-fetch-method/</a>. Faça uma função chamada listImages(url) que recebe como parâmetro uma URL para uma função remota presente no endereço https://jsonplaceholder.typicode.com/photos. Ao receber os objetos relacionados à chamada realizada, a função criada deve retornar um vetor com os objetos recebidos. Caso não receba nenhum objeto, a função deve retornar "null". (1 ponto)
-				</p>
+        Explicação: Um programa feito em Javascript e que rode num navegador,
+        normalmente, trabalha com chamadas de funções assíncrona. Dessa forma, o
+        programa não precisa esperar a execução e retorno de valor de uma função
+        para continuar sua execução. Essa assincronia é muito importante se o
+        programa tem que se comunicar com uma função que está no servidor
+        (backend) e não pode esperar o retorno dessa função para continuar sua
+        execução.
+        <p>
+          Desta forma, é possível continuar interagindo com a página web em seu
+          navegador, enquanto se aguarda a carga de algum conjunto de dados
+          solicitado pelo usuário. Quando os dados chegam, o programa interrompe
+          o que está fazendo e vai executar o trecho de código que solicitou os
+          dados. Você já viu que é possível continuar incluindo itens no
+          Carrinho de Compras da aplicação de vendas da Amazon, mesmo que a
+          aplicação não tenha confirmado as inserções já realizadas? Quando a
+          inserção é realizada, é apresentada uma mensagem informando a inserção
+          para o utilizador.
+        </p>
+        <p>
+          A função que é utilizada no Javascript para chamada remota de funções
+          assíncronas, atualmente, é a fetch(). Essa função é exemplificada no
+          tutorial publicado no site GeeksforGeeks, presente na URL
+          <a
+            target="_blank"
+            href="https://www.geeksforgeeks.org/javascript-fetch-method/"
+          >
+            https://www.geeksforgeeks.org/javascript-fetch-method/ </a
+          >. Faça uma função chamada listImages(url) que recebe como parâmetro
+          uma URL para uma função remota presente no endereço
+          https://jsonplaceholder.typicode.com/photos. Ao receber os objetos
+          relacionados à chamada realizada, a função criada deve retornar um
+          vetor com os objetos recebidos. Caso não receba nenhum objeto, a
+          função deve retornar "null". (1 ponto)
+        </p>
       </h2>
 
       <section id="response">
@@ -26,5 +52,5 @@
       </section>
     </section>
     <script src="script.js"></script>
-	</body>
+  </body>
 </html>
