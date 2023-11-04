@@ -12,21 +12,63 @@ function getNumberName(number, iterations = 0) {
   }
 }
 
+function specialNumber(number, iterations, numberStr) {
+  if (number === 0 && iterations === 0) {
+    return "zero";
+  }
+
+  if (
+    number === 100 &&
+    (iterations === 0 || iterations === 2) &&
+    numberStr.length >= 3
+  ) {
+    return "cem";
+  }
+
+  const countZeros = numberStr.length;
+  const oneWithZeros = String("1").padEnd(countZeros, 0);
+
+  if (Number(numberStr) === Number(oneWithZeros) && oneWithZeros.length > 3) {
+    let cetenesCount = Math.floor((countZeros - 1) / 3);
+    const restNumber = countZeros % 3;
+    const sliceRestNumber = numberStr.slice(
+      0,
+      restNumber === 0 ? 3 : restNumber,
+    );
+
+    const getNumberWithoutCetenes = Number(sliceRestNumber);
+    const word =
+      getNumberWithoutCetenes === 100
+        ? "cem"
+        : getNumberWithoutCetenes === 1
+        ? ""
+        : getNumberName(getNumberWithoutCetenes, restNumber - 1);
+    return addSufix(word, cetenesCount);
+  }
+}
+
 function addSufix(word, cetenesCount) {
   const exponent = cetenesCount * 3;
   const numberSufix = Math.pow(10, exponent);
   const sufix = sufixs[numberSufix];
-  word += ` ${sufix}`;
-  return word;
+
+  if (typeof word === "string") {
+    word += ` ${sufix}`;
+    return word;
+  }
+
+  return ` ${sufix}`;
 }
 
 function addWordWithRemoveOnStart(arr, word) {
   arr.splice(0, 1);
-  arr.unshift(word);
+  addWordOnStart(arr, word);
 }
 
 function addWordOnStart(arr, word) {
-  arr.unshift(word);
+  if (typeof word === "string") {
+    arr.unshift(word);
+  }
 }
 
 function readNumberPerExtense(number) {
@@ -38,6 +80,11 @@ function readNumberPerExtense(number) {
   let index = len - 1;
   let i = 0;
   let cetenesCount = 0;
+
+  const specialNumberName = specialNumber(Number(numberStr), i, numberStr);
+  if (!!specialNumberName) {
+    return specialNumberName;
+  }
 
   while (index >= 0) {
     const number = numberStr[index];
@@ -75,8 +122,22 @@ function readNumberPerExtense(number) {
       }
 
       case 2: {
+        const n = Number(
+          numberStr[index] + numberStr[index + 1] + numberStr[index + 2],
+        );
+        if (n === 100) {
+          let numberCharName = "cem";
+          if (cetenesCount > 0) {
+            numberCharName = addSufix(numberCharName, cetenesCount);
+          }
+          addWordWithRemoveOnStart(numberName, numberCharName);
+          i = 0;
+          index--;
+          cetenesCount++;
+          continue;
+        }
         const scientistNotation = Math.pow(10, 2);
-        const numberCharName = getNumberName(
+        let numberCharName = getNumberName(
           Number(number) * scientistNotation,
           i,
         );
@@ -88,11 +149,11 @@ function readNumberPerExtense(number) {
       }
 
       default:
-        throw new Error('Error: ' + i);
+        throw new Error("Error: " + i);
     }
   }
 
-  return numberName.join(' e ');
+  return numberName.join(" e ");
 }
 
 console.log(readNumberPerExtense(211));
