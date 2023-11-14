@@ -1,0 +1,27 @@
+:root {
+  --mw: 100%;
+  /* tamanho vertical */
+  --mh: 100%;
+  /* tamanho horizontal */
+
+  --colorMap: #e6e6e6;
+}
+
+
+#map {
+  display: grid;
+  grid-template-rows: repeat(11, 1fr);
+  grid-template-columns: repeat(11, 1fr);
+  width: 200px;
+  height: 200px;
+  background-color: var(--colorMap);
+}
+
+#map .muro {
+
+  position: relative;
+  top: 0px;
+  width: var(--mw);
+  height: var(--mh);
+  background-color: #050505;
+}
