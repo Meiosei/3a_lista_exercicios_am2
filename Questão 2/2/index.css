@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--gradient);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    font-family: 'AR One Sans', sans-serif;
+    color: var(--white);
+  }
+
+  header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+  }
+
+  #container {
+    width: 90vw;
+    max-width: 720px;
+    margin: auto;
+    padding: var(--spacing-3);
+    border: 1px solid var(--gray-3);
+    border-radius: 16px;
+    background: var(--gray-3);
+    box-shadow: var(--shadow-1);
+    backdrop-filter: blur(5px);
+    margin-top: 20px;
+  }
+
+  #question {
+    color: var(--gray-1);
+    font-weight: 600;
+    text-align: justify;
+    margin-bottom: var(--spacing-3);
+  }
+
+  #question span {
+    margin: 0 1rem 1rem 0;
+    padding-right: 10px;
+    font-size: 4rem;
+    float: left;
+    opacity: 0.5;
+  }
