@@ -1,5 +1,5 @@
 //Constantes
-let comentarios = document.querySelector(".comentario");
+let comentarios = document.querySelector("#comentarios");
 const container = document.querySelector("#container");
 const next = document.querySelector("#next");
 const back = document.querySelector("#back");
@@ -11,16 +11,15 @@ let endpoint = `https://jsonplaceholder.typicode.com/posts?_start=${start}&_limi
 const eraser = () => {
   comentarios.innerHTML = "";
   // console.clear();
-}
+};
 
 //Função listpost
 const listPost = (url) => {
-
   console.log("esse é o start" + start, endpoint);
 
-
-  fetch(url).then(
-    response => response.json()).then(dados => {
+  fetch(url)
+    .then((response) => response.json())
+    .then((dados) => {
       let id;
       let title;
       let body;
@@ -29,7 +28,6 @@ const listPost = (url) => {
         id = dados[i].id;
         title = dados[i].title;
         body = dados[i].body;
-
 
         console.log(id);
 
@@ -40,28 +38,21 @@ const listPost = (url) => {
           <p id="c${i}">id_comentário: ${id}</p>
 
         </div>
-        `
+        `;
       }
 
-
       console.log(document);
-    })
-
-
-}
-
+    });
+};
 
 //First Call
 listPost(endpoint);
-
-
 
 //Buttons
 
 next.addEventListener("click", () => {
   start += 10;
   endpoint = `https://jsonplaceholder.typicode.com/posts?_start=${start}&_limit=${quantPost}`;
-
 
   console.log(start);
 
@@ -71,31 +62,20 @@ next.addEventListener("click", () => {
 
   if (start >= 90) {
     next.disabled = true;
-
-
   }
   if (start >= 10) {
     back.disabled = false;
-
-
   } else {
     back.disabled = true;
   }
-
-
-
 });
 
 //Botoes Enable e Disnable
 if (start >= 90) {
   next.disabled = true;
-
-
 }
 if (start >= 10) {
   back.disabled = false;
-
-
 } else {
   back.disabled = true;
 }
@@ -105,34 +85,25 @@ back.addEventListener("click", () => {
   console.log("clicando");
   start -= 10;
 
-  console.log("back=: "+start);
-  
+  console.log("back=: " + start);
+
   //Botoes Enable e Disnable
   if (start >= 90) {
     next.disabled = true;
-
-
-  }else{ next.disabled = false;
-       }
+  } else {
+    next.disabled = false;
+  }
   if (start >= 10) {
     back.disabled = false;
-
-
   } else {
     back.disabled = true;
   }
 
   endpoint = `https://jsonplaceholder.typicode.com/posts?_start=${start}&_limit=${quantPost}`;
 
-
-
   console.log("esse é o start Back: " + start);
 
   listPost(endpoint);
 
   eraser();
-
 });
-
-
-

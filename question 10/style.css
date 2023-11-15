@@ -4,7 +4,8 @@
   --mh: 100%;
   /* tamanho horizontal */
 
-  --colorMap: #e6e6e6;
+  --color-map: #e6e6e6;
+	--color-player:  #e73c7e;
 }
 
 
@@ -18,10 +19,9 @@
 }
 
 #map .muro {
-
   position: relative;
   top: 0px;
   width: var(--mw);
   height: var(--mh);
-  background-color: #050505;
+  background-color: var(--white);
 }

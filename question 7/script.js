@@ -1,4 +1,4 @@
-let comentarios = document.querySelector(".comentario");
+let comentarios = document.querySelector("#comentarios");
 const container = document.querySelector("#container");
 const next = document.querySelector("#next");
 const back = document.querySelector("#back");
@@ -8,15 +8,14 @@ let endpoint = `https://jsonplaceholder.typicode.com/posts?_start=${start}&_limi
 
 const eraser = () => {
   comentarios.innerHTML = "";
-}
+};
 
 const listPost = (url) => {
-
   console.log("esse é o start" + start, endpoint);
 
-
-  fetch(url).then(
-    response => response.json()).then(dados => {
+  fetch(url)
+    .then((response) => response.json())
+    .then((dados) => {
       let id;
       let title;
       let body;
@@ -25,7 +24,6 @@ const listPost = (url) => {
         id = dados[i].id;
         title = dados[i].title;
         body = dados[i].body;
-
 
         console.log(id);
 
@@ -36,13 +34,12 @@ const listPost = (url) => {
           <p id="c${i}">id_comentário: ${id}</p>
 
         </div>
-        `
+        `;
       }
 
       console.log(document);
-    })
-
-}
+    });
+};
 
 listPost(endpoint);
 
@@ -58,24 +55,19 @@ next.addEventListener("click", () => {
 
   if (start >= 90) {
     next.disabled = true;
-
   }
   if (start >= 10) {
     back.disabled = false;
-
   } else {
     back.disabled = true;
   }
-
 });
 
 if (start >= 90) {
   next.disabled = true;
-
 }
 if (start >= 10) {
   back.disabled = false;
-
 } else {
   back.disabled = true;
 }
@@ -84,16 +76,15 @@ back.addEventListener("click", () => {
   console.log("clicando");
   start -= 10;
 
-  console.log("back=: "+start);
-  
+  console.log("back=: " + start);
+
   if (start >= 90) {
     next.disabled = true;
-
-  }else{ next.disabled = false;
-       }
+  } else {
+    next.disabled = false;
+  }
   if (start >= 10) {
     back.disabled = false;
-
   } else {
     back.disabled = true;
   }
@@ -105,7 +96,6 @@ back.addEventListener("click", () => {
   listPost(endpoint);
 
   eraser();
-
 });
 
 const userIdInput = document.querySelector("#userIdInput");
@@ -136,7 +126,7 @@ const listPostsByUser = (userId) => {
 
 filterButton.addEventListener("click", () => {
   const inputUserId = parseInt(userIdInput.value, 10);
-  
+
   if (isNaN(inputUserId) || inputUserId < 1 || inputUserId > 10) {
     alert("Informe um número de 1 a 10.");
     return;
