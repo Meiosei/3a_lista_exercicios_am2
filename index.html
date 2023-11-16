@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <title>Autoração</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style.css" rel="stylesheet" />
+    <style>
+      #container {
+        padding: calc(var(--spacing-3) * 2);
+      }
+      #container ul li {
+        margin-left: calc(var(--spacing-3) * 2);
+      }
+      #container h2 + ul li {
+        margin-bottom: var(--spacing-2);
+      }
+      #container h2 + ul li a:hover {
+        opacity: 0.7;
+        text-decoration: none;
+      }
+    </style>
+  </head>
 
-<head>
-	<title>Autoração</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="style.css" rel="stylesheet" />
-</head>
+  <body>
+    <section id="container">
+      <header>
+        <h1>Equipe:</h1>
+        <ul>
+          <li>ARTHUR DE ASSIS ARAUJO MOREIRA</li>
+          <li>VICTOR KAUAN XAVIER ALCANTARA</li>
+          <li>WESLEY ALVES ROLIM</li>
+        </ul>
+      </header>
+      <h2 id="question">Questões</h2>
 
-<body>
-	<section id="container">
-		<h2 id="question">
-			Questões
-		</h2>
-
-		<ul>
-			<li><a href="question 1/index.html">Questão 1</a></li>
-			<li><a href="question 2/index.html">Questão 2</a></li>
-			<li><a href="question 3/index.html">Questão 3</a></li>
-			<li><a href="question 4/index.html">Questão 4</a></li>
-			<li><a href="question 5/index.html">Questão 5</a></li>
-			<li><a href="question 6/index.html">Questão 6</a></li>
-			<li><a href="question 7/index.html">Questão 7</a></li>
-			<li><a href="question 8/index.html">Questão 8</a></li>
-			<li><a href="question 9/index.html">Questão 9</a></li>
-			<li><a href="question 10/index.html">Questão 10</a></li>
-		</ul>
-	</section>
-
+      <ul>
+        <li><a href="question 1/index.html">Questão 1</a></li>
+        <li><a href="question 2/index.html">Questão 2</a></li>
+        <li><a href="question 3/index.html">Questão 3</a></li>
+        <li><a href="question 4/index.html">Questão 4</a></li>
+        <li><a href="question 5/index.html">Questão 5</a></li>
+        <li><a href="question 6/index.html">Questão 6</a></li>
+        <li><a href="question 7/index.html">Questão 7</a></li>
+        <li><a href="question 8/index.html">Questão 8</a></li>
+        <li><a href="question 9/index.html">Questão 9</a></li>
+        <li><a href="question 10/index.html">Questão 10</a></li>
+      </ul>
+    </section>
+  </body>
 </html>
