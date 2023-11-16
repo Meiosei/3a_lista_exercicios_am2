@@ -12,7 +12,7 @@
 
 1. Instale um [navegador](https://br.my-best.com/20907)
 2. Instale o [Git](https://git-scm.com/)
-3. Copie e cole o seguinte comando
+3. Com o Git Bash aberto, copie e cole o seguinte comando
 
 ```bash
 git clone https://github.com/Meiosei/3a_lista_exercicios_am2.git
